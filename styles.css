@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: 0.3s ease-in-out;
+    flex-wrap: wrap;
+    flex-direction: column; /* Allow stacking */
+}
+
+/* welcome Message */
+.welcome {
+    position: absolute;
+    top: 20px;
+    background: #f8f8f7;
+    color: rgb(21, 29, 98);
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    z-index: 2;
+}
+
+/* Animation to disappear */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 8%;
+    z-index: 1;
+}
+
+/* Calculator */
+.calculator {
+    background: rgba(34, 34, 34, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    position: relative;
+    width: 320px;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    max-width: 80%;
+}
+
+/* Display */
+.display {
+    background: rgba(51, 51, 51, 0.9);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: right;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+#history {
+    font-size: 0.8em;
+    color: white;
+    height: 20px;
+}
+
+#result {
+    width: 100%;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 1.5em;
+    text-align: right;
+}
+
+/* Buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    position: relative;
+}
+
+button {
+    background: rgba(68, 68, 68, 0.8);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #ff9800;
+    color: black;
+    transform: scale(1.1);
+}
+
+.equal {
+    background: #ff9800;
+    color: black;
+    grid-column: span 2;
+}
+
+/* Theme */
+.theme-toggle {
+    background: #ffffff;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    position: relative;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Light Theme */
+.light-mode {
+    background: linear-gradient(45deg, #f4f4f4, #ffffff);
+}
+
+.light-mode .calculator {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 1px 4px 20px black;
+}
+
+.light-mode .display {
+    background-color: rgba(136, 136, 136, 0.9);
+    color: black;
+}
+
+.light-mode .theme-toggle {
+    background: #333;
+}
+
+.light-mode button {
+    background: rgba(100, 100, 100, 0.8);
+    color: rgb(0, 0, 0);
+}
+
+.light-mode button:hover {
+    background: #ff5722;
+    color: white;
+}
+
+.light-mode .welcome {
+    color: #f8f8f7;
+    background: rgb(21, 29, 98);
+}
+
+/* Responsive Design: Stack components on smaller screens */
+@media screen and (max-width: 600px) {
+    body {
+        flex-direction: column; /* Stack the welcome message and calculator */
+        padding: 10px;
+    }
+    
+    .welcome {
+        position: relative;
+        top: 0;
+        margin-bottom: 20px;
+        width: auto;
+    }
+
+    .container {
+        margin-top: 0;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .calculator {
+        margin-top: 20px;
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .display {
+        font-size: 1.2em;
+        padding: 10px;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(4, 1fr); /* Keep buttons in 4 columns */
+        gap: 5px;
+    }
+
+    button {
+        font-size: 1.2em;
+        padding: 10px;
+    }
+
+    .theme-toggle {
+        width: 100%;
+        font-size: 1.2em;
+    }
+}
