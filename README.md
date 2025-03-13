@@ -4,3 +4,4 @@ A basic UI-friendly responsive Calculator application, have fun doing calculatio
 https://nandinee-sharma.github.io/Calculator/
 
 #preview:
+![alt text](image.png)
